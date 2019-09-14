@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Никита Лелявин](https://up.htmlacademy.ru/javascript/18/user/1012957).
-* Наставник: `Неизвестно`.
+* Наставник: [Евгений Самойленко](https://htmlacademy.ru/profile/id999539).
 
 ---
 
