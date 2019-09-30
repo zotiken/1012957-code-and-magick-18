@@ -9,7 +9,7 @@ window.blockSetup = blockSetup;
 //  ---------- Показать блок ---------------
 
 var onBlockEscPress = function (evt) {
-  if (evt.keyCode === window.ulil.ESC_KEYCODE) {
+  if (evt.keyCode === window.util.ESC_KEYCODE) {
     closeBlock();
   }
 };
@@ -29,7 +29,7 @@ var closeBlock = function () {
 };
 
 document.querySelector('input[name="username"]').addEventListener('keydown', function (evt) {
-  if (evt.keyCode === window.ulil.ESC_KEYCODE) {
+  if (evt.keyCode === window.util.ESC_KEYCODE) {
     evt.stopPropagation();
   }
 });
@@ -38,7 +38,7 @@ blockSetupOpen.addEventListener('click', function () {
   showBlock();
 });
 blockSetupOpen.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === window.ulil.ENTER_KEYCODE) {
+  if (evt.keyCode === window.util.ENTER_KEYCODE) {
     showBlock();
   }
 });
@@ -48,7 +48,7 @@ blocksetupClose.addEventListener('click', function () {
   closeBlock();
 });
 blocksetupClose.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === window.ulil.ENTER_KEYCODE) {
+  if (evt.keyCode === window.util.ENTER_KEYCODE) {
     closeBlock();
   }
 });
