@@ -54,11 +54,11 @@ blocksetupClose.addEventListener('keydown', function (evt) {
 });
 
 
-var unload = function () {
+var onUnload = function () {
   WizardForm.classList.add('hidden');
 };
 
-var err = function (error) {
+var onErr = function (error) {
   var errorInfo = '<p>' + error + '</p>';
   var message = document.createElement('div');
   message.classList.add('modal-error-massage');
@@ -73,7 +73,7 @@ var err = function (error) {
 
 
 WizardForm.addEventListener('submit', function (evt) {
-  window.backend.upload(WizardForm, 'https://js.dump.academy/code-and-magick', unload, err);
+  window.backend.upload(WizardForm, 'https://js.dump.academy/code-and-magick', onUnload, onErr);
   evt.preventDefault();
 
 });
