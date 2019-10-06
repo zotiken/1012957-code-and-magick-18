@@ -73,7 +73,7 @@ var err = function (error) {
 
 
 WizardForm.addEventListener('submit', function (evt) {
-  window.upload(WizardForm, 'https://js.dump.academy/code-and-magicks', unload, err);
+  window.upload(WizardForm, 'https://js.dump.academy/code-and-magick', unload, err);
   evt.preventDefault();
 
 });
