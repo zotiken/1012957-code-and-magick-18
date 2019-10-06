@@ -78,7 +78,7 @@
     blockSetuSimilar.classList.remove('hidden');
   };
 
-  window.load('https://js.dump.academy/code-and-magick/data', Load);
+  window.backend.load('https://js.dump.academy/code-and-magick/data', Load);
 
 
   mainWizardCoat.addEventListener('click', function () {

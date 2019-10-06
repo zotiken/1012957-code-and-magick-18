@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 'use strict';
 (function () {
-  window.load = function (url, onLoad, onError) {
+
+
+  var load = function (url, onLoad, onError) {
     var xhr = new XMLHttpRequest();
 
     xhr.responseType = 'json';
@@ -28,7 +30,7 @@
     xhr.send();
   };
 
-  window.upload = function (form, url, onLoad, onError) {
+  var upload = function (form, url, onLoad, onError) {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.addEventListener('load', function () {
@@ -43,7 +45,6 @@
         case 304:
           onError('Ошибка сервера');
           console.error(xhr.status);
-
           break;
         case 500:
           onError('Ошибка сервера,попробуйте позже!');
@@ -59,5 +60,10 @@
     xhr.timeout = 10000;
     xhr.open('POST', url);
     xhr.send(new FormData(form));
+  };
+
+  window.backend = {
+    load: load,
+    upload: upload
   };
 })();
