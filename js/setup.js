@@ -3,7 +3,7 @@
 var blockSetup = document.querySelector('.setup');
 var blockSetupOpen = document.querySelector('.setup-open');
 var blocksetupClose = document.querySelector('.setup-close');
-
+var WizardForm = document.querySelector('.setup-wizard-form');
 
 window.blockSetup = blockSetup;
 //  ---------- Показать блок ---------------
@@ -53,3 +53,27 @@ blocksetupClose.addEventListener('keydown', function (evt) {
   }
 });
 
+
+var onUnload = function () {
+  WizardForm.classList.add('hidden');
+};
+
+var onErr = function (error) {
+  var errorInfo = '<p>' + error + '</p>';
+  var message = document.createElement('div');
+  message.classList.add('modal-error-massage');
+  message.insertAdjacentHTML('afterBegin', errorInfo);
+  document.body.appendChild(message);
+  var modalErrorMassage = document.querySelector('.modal-error-massage');
+  var remove = function () {
+    modalErrorMassage.remove();
+  };
+  setTimeout(remove, 3000);
+};
+
+
+WizardForm.addEventListener('submit', function (evt) {
+  window.backend.upload(WizardForm, 'https://js.dump.academy/code-and-magick', onUnload, onErr);
+  evt.preventDefault();
+
+});
